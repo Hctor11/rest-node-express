@@ -11,8 +11,14 @@ const app = express();
 // It parses incoming JSON requests and puts the parsed data in req.body.
 app.use(express.json())
 
+app.get("/status", (req, res) => {
+    const status = {
+        "Status":"running"
+    }
+    
+    res.send(status)
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-
